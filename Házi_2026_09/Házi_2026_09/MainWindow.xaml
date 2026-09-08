@@ -1,0 +1,85 @@
+﻿<Window x:Class="Házi_2026_09.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Házi_2026_09"
+        mc:Ignorable="d"
+        Title="Banki ATM" Height="914" Width="1903">
+    <Grid Margin="0,0,-2,-1" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.051"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="1843*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Banki egyenleg" HorizontalAlignment="Left" Margin="13,37,0,0" VerticalAlignment="Top" Width="146" FontSize="20" Grid.Column="1" Height="37"/>
+        <Label x:Name="bankegyenleg" Content="0" HorizontalAlignment="Left" Margin="187,37,0,0" VerticalAlignment="Top" Width="150" FontSize="20" Grid.Column="1" Height="37"/>
+        <Label Content="Készpénz" HorizontalAlignment="Left" Margin="13,105,0,0" VerticalAlignment="Top" Width="146" FontSize="20" Grid.Column="1" Height="37"/>
+        <Label x:Name="KPegyenleg" Content="0" HorizontalAlignment="Left" Margin="187,105,0,0" VerticalAlignment="Top" Width="119" FontSize="20" Grid.Column="1" Height="37"/>
+        <TextBox x:Name="getkp" HorizontalAlignment="Left" Margin="13,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" FontSize="20" Background="#FFD0D0D0" Grid.Column="1" Height="29"/>
+        <Button Content="KP Felvétel" HorizontalAlignment="Left" Margin="197,239,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.252,-0.299" Height="29" Width="109" FontSize="20" Grid.Column="1" Click="Button_Click"/>
+        <TextBox x:Name="addkp" Grid.Column="1" HorizontalAlignment="Left" Margin="13,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Background="#FFD0D0D0" FontSize="20" Height="29"/>
+        <Button Grid.Column="1" Content="Befizetés" HorizontalAlignment="Left" Margin="197,316,0,0" VerticalAlignment="Top" Height="34" Width="109" FontSize="20" Click="Button_Click_1"/>
+        <TextBox x:Name="log" HorizontalAlignment="Left" Margin="1,376,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="610" Height="176" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2" Background="#FFCCCCCC" IsReadOnly="True">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.34"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="addvaluta" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="372,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="29" Background="#FFD0D0D0" FontSize="20"/>
+        <Button Content="Devizaváltás" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="566,311,0,0" VerticalAlignment="Top" Height="31" Width="127" FontSize="20" Click="Button_Click_2" RenderTransformOrigin="0.602,2.826"/>
+        <ComboBox Grid.ColumnSpan="2" x:Name="valuta" HorizontalAlignment="Left" Margin="374,243,0,0" VerticalAlignment="Top" Width="148" Height="30">
+            <ComboBoxItem Content="HUF - EUR (0,0028)"/>
+            <ComboBoxItem Content="EUR - HUF (362)"/>
+        </ComboBox>
+        <Label Content="EUR" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="366,38,0,0" VerticalAlignment="Top" Height="35" Width="70" FontSize="20"/>
+        <Label x:Name="EURegyenleg" Content="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="445,40,0,0" VerticalAlignment="Top" Width="143" FontSize="20" Height="37"/>
+        <ComboBox x:Name="hitel" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="608,94,0,0" VerticalAlignment="Top" Width="165" Height="31" RenderTransformOrigin="-0.46,0.811">
+            <ComboBoxItem Content="5000000"/>
+            <ComboBoxItem Content="10000000"/>
+            <ComboBoxItem Content="15000000"/>
+            <ComboBoxItem Content="20000000"/>
+            <ComboBoxItem Content="25000000"/>
+            <ComboBoxItem Content="30000000"/>
+        </ComboBox>
+        <Button Content="Felvét" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="827,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.917,0.215" Height="35" Width="127" FontSize="20" Click="Button_Click_3">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.366"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Label Content="HITEL" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="606,39,0,0" VerticalAlignment="Top" Width="170" Height="43" FontSize="20"/>
+        <Button Grid.Column="1" Content="Pörgess" HorizontalAlignment="Left" Margin="1319,423,0,0" VerticalAlignment="Top" Height="38" Width="110" FontSize="20" Click="Button_Click_4" RenderTransformOrigin="0.122,0.938"/>
+        <Label x:Name="kapottszamL" Grid.Column="1" Content="" HorizontalAlignment="Left" Margin="1178,423,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.006,0.214" Width="114" Height="38" Background="#FFBDB6B6" FontSize="20"/>
+        <Label Content="Szeretnél sok pénzt nyerni (veszteni) akkor itt a helyed" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="796,364,0,0" VerticalAlignment="Top" Height="52" Width="508" FontSize="20"/>
+        <Label Content="Tippelj egy számot" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="796,428,0,0" VerticalAlignment="Top" Height="46" Width="188" FontSize="20"/>
+        <TextBox x:Name="tippeltszam" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="1014,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="44" FontSize="20"/>
+        <TextBox x:Name="fogadas" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="1022,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Height="44" FontSize="20"/>
+        <Label Content="Fogadj egy összegben" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="792,485,0,0" VerticalAlignment="Top" Height="51" Width="219" FontSize="20"/>
+        <Button Content="FOGAD" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="1179,493,0,0" VerticalAlignment="Top" Height="36" Width="107" FontSize="20" Click="Button_Click_5" RenderTransformOrigin="-2.888,9.535"/>
+    </Grid>
+</Window>
