@@ -29,8 +29,8 @@ namespace Házi_2026_09
         }
 
         //Alapérték beállítása
-        public int bankiegyenleg = 20000000;
-        public int kpegyenleg = 100000;
+        public int bankiegyenleg = 1500000;
+        public int kpegyenleg = 300000;
         public int euregyenleg = 0;
 
         public int eur_to_huf = 360;
